@@ -210,37 +210,39 @@ a:visited {
    COMEDY PAGE
 ------------------------- */
 
-.comedy-page {
+/* -------------------------
+   COMEDY PAGE
+------------------------- */
+
+main.comedy-page {
     display: grid;
-    grid-template-columns: minmax(0, 1fr) 280px;
-    gap: 80px;
+    grid-template-columns: minmax(0, 750px) 280px;
+    gap: 100px;
     align-items: start;
 }
 
 
-/* BLOG */
+/* LEFT SIDE - BLOG */
 
 .comedy-blog {
-    max-width: 700px;
+    width: 100%;
 }
 
 .page-label {
     font-size: 16px;
-    font-weight: bold;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    color: #777;
+    font-weight: normal;
+    color: #555;
     margin-top: 0;
-    margin-bottom: 45px;
+    margin-bottom: 30px;
 }
 
 .comedy-entry {
-    margin-bottom: 65px;
+    margin-bottom: 55px;
 }
 
 .comedy-entry h2 {
     font-size: 22px;
-    margin-bottom: 2px;
+    margin-bottom: 5px;
 }
 
 .comedy-date {
@@ -255,16 +257,18 @@ a:visited {
 }
 
 
-/* SIDEBAR */
+/* RIGHT SIDE - SIDEBAR */
 
 .comedy-sidebar {
-    border: 1px solid #ccc;
+    width: 100%;
+    box-sizing: border-box;
+    border: 1px solid #bbb;
     border-radius: 12px;
     padding: 25px;
 }
 
 .sidebar-section {
-    margin-bottom: 32px;
+    margin-bottom: 30px;
 }
 
 .sidebar-section:last-child {
@@ -275,8 +279,9 @@ a:visited {
     font-size: 14px;
     text-transform: uppercase;
     letter-spacing: 1px;
-    margin-bottom: 7px;
     color: #777;
+    margin-top: 0;
+    margin-bottom: 8px;
 }
 
 .sidebar-section p {
@@ -289,17 +294,13 @@ a:visited {
 }
 
 
-/* MOBILE */
+/* PHONE / SMALL SCREEN */
 
 @media (max-width: 800px) {
 
-    .comedy-page {
+    main.comedy-page {
         grid-template-columns: 1fr;
-        gap: 50px;
-    }
-
-    .comedy-sidebar {
-        max-width: 100%;
+        gap: 40px;
     }
 
 }
