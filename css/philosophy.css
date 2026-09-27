@@ -3,10 +3,9 @@
 ------------------------- */
 
 main.philosophy-page {
-    display: grid;
-    grid-template-columns: 250px minmax(0, 600px) 250px;
-    gap: 50px;
-    align-items: start;
+    position: relative;
+    display: block;
+    max-width: 650px;
 }
 
 
@@ -49,14 +48,32 @@ main.philosophy-page {
 }
 
 
-/* LEFT AND RIGHT SIDES */
+/* -------------------------
+   LEFT AND RIGHT BOX AREAS
+------------------------- */
 
 .philosophy-side {
-    width: 100%;
+    position: absolute;
+    width: 250px;
+    top: 0;
+}
+
+/* Push left boxes outside normal page margin */
+
+.philosophy-left {
+    right: calc(100% + 50px);
+}
+
+/* Push right boxes outside journal */
+
+.philosophy-right {
+    left: calc(100% + 50px);
 }
 
 
-/* INDIVIDUAL BOXES */
+/* -------------------------
+   INDIVIDUAL BOXES
+------------------------- */
 
 .philosophy-card {
     box-sizing: border-box;
@@ -88,47 +105,57 @@ main.philosophy-page {
 }
 
 
-/* STAGGERED POSITIONS */
+/* -------------------------
+   STAGGERED BOX POSITIONS
+------------------------- */
 
+/* Upper left */
 .philosophy-card-1 {
     margin-top: 20px;
 }
 
+/* Upper right */
 .philosophy-card-2 {
     margin-top: 160px;
 }
 
+/* Lower left */
 .philosophy-card-3 {
     margin-top: 260px;
 }
 
+/* Lower right */
 .philosophy-card-4 {
     margin-top: 300px;
 }
 
 
-/* MOBILE */
+/* -------------------------
+   MOBILE / SMALL SCREENS
+------------------------- */
 
-@media (max-width: 1000px) {
+@media (max-width: 1200px) {
+
     main.philosophy-page {
-        display: flex;
-        flex-direction: column;
+        max-width: 700px;
+    }
+
+    .philosophy-side {
+        position: static;
+        width: 100%;
     }
 
     .philosophy-journal {
-        order: 1;
+        width: 100%;
     }
 
-    .philosophy-left {
-        order: 2;
-    }
-
+    .philosophy-left,
     .philosophy-right {
-        order: 3;
+        position: static;
     }
 
     .philosophy-card {
-        margin-top: 25px;
         max-width: 500px;
+        margin-top: 25px;
     }
 }
