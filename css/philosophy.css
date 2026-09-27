@@ -283,90 +283,95 @@ main.philosophy-page {
 
 }
 /* -------------------------
-   READ MORE / EXPAND
+   PHILOSOPHY DROPDOWN
 ------------------------- */
 
-.philosophy-more {
-    margin-top: 0;
+.philosophy-dropdown {
+    margin: 0;
+    padding: 0;
 }
 
 
-/* Entire preview line */
+/* Preview */
 
-.philosophy-more summary {
+.philosophy-dropdown summary {
     display: block;
 
+    margin: 0;
+    padding: 0;
+
     color: #222;
-    text-decoration: none;
 
     cursor: pointer;
+
     list-style: none;
 }
 
-
-/* Remove default triangle */
-
-.philosophy-more summary::-webkit-details-marker {
+.philosophy-dropdown summary::-webkit-details-marker {
     display: none;
 }
 
-.philosophy-more summary::marker {
+.philosophy-dropdown summary::marker {
     display: none;
 }
 
 
 /* Preview text */
 
-.philosophy-preview {
+.preview-text {
     color: #222;
 }
 
 
-/* Read More link */
+/* Read more */
 
-.read-more-text {
-    color: #6fa8dc;
+.read-more {
+    color: #73a9d8;
+
+    margin-left: 3px;
+
     white-space: nowrap;
 }
 
-
-/* Slightly darker when hovered */
-
-.read-more-text:hover {
+.read-more:hover {
     color: #4f8fc9;
+
     text-decoration: underline;
 }
 
 
-/* Expanded text */
+/* Hide Read More when entry is open */
 
-.philosophy-full {
-    margin-top: 20px;
-}
-
-.philosophy-full p {
-    margin-bottom: 24px;
-}
-
-
-/* Hide Read More after opening */
-
-.philosophy-more[open] .read-more-text {
+.philosophy-dropdown[open] .read-more {
     display: none;
 }
 
 
-/* Show Less at bottom */
+/* Expanded writing */
 
-.show-less-text {
-    color: #6fa8dc;
+.expanded-text {
+    margin-top: 20px;
+}
 
-    margin-top: 10px;
+.expanded-text p {
+    margin-bottom: 24px;
+}
+
+
+/* Show Less */
+
+.show-less {
+    display: inline-block;
+
+    margin-top: 5px;
+
+    color: #73a9d8;
 
     cursor: pointer;
 }
 
-.show-less-text:hover {
+.show-less:hover {
     color: #4f8fc9;
+
     text-decoration: underline;
 }
