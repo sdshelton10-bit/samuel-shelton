@@ -2,14 +2,75 @@
    PHILOSOPHY PAGE
 ------------------------- */
 
-main.philosophy-page {
-    position: relative;
-    display: block;
-    max-width: 650px;
+/*
+   Philosophy is different from the other pages:
+   let the side cards live outside the main white box.
+*/
+
+body:has(.philosophy-page) {
+    width: auto;
+    max-width: 1200px;
+
+    background: transparent;
+    border-radius: 0;
+
+    padding: 0 20px;
 }
 
 
-/* CENTER JOURNAL */
+/* -------------------------
+   HEADER
+------------------------- */
+
+/*
+   Keep the header/navigation inside the same
+   white box as the philosophy journal.
+*/
+
+body:has(.philosophy-page) > header {
+    width: 700px;
+    max-width: 100%;
+
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 0;
+
+    padding: 35px 45px 0;
+
+    box-sizing: border-box;
+
+    background: white;
+
+    border-radius: 18px 18px 0 0;
+}
+
+
+/* -------------------------
+   MAIN PHILOSOPHY AREA
+------------------------- */
+
+main.philosophy-page {
+    position: relative;
+
+    width: 700px;
+    max-width: 100%;
+
+    margin-left: auto;
+    margin-right: auto;
+
+    padding: 30px 45px 45px;
+
+    box-sizing: border-box;
+
+    background: white;
+
+    border-radius: 0 0 18px 18px;
+}
+
+
+/* -------------------------
+   MAIN JOURNAL
+------------------------- */
 
 .philosophy-journal {
     width: 100%;
@@ -23,6 +84,7 @@ main.philosophy-page {
 
 .philosophy-intro {
     color: #555;
+
     margin-top: 0;
     margin-bottom: 55px;
 }
@@ -33,6 +95,7 @@ main.philosophy-page {
 
 .philosophy-entry h2 {
     font-size: 21px;
+
     margin-top: 3px;
     margin-bottom: 18px;
 }
@@ -40,6 +103,7 @@ main.philosophy-page {
 .philosophy-date {
     color: #888;
     font-size: 15px;
+
     margin-bottom: 0;
 }
 
@@ -49,42 +113,54 @@ main.philosophy-page {
 
 
 /* -------------------------
-   LEFT AND RIGHT BOX AREAS
+   SIDE CARD AREAS
 ------------------------- */
 
 .philosophy-side {
     position: absolute;
-    width: 250px;
+
+    width: 235px;
+
     top: 0;
+
+    background: transparent;
 }
 
-/* Push left boxes outside normal page margin */
+
+/*
+   Small equal gap between the main white box
+   and the cards on either side.
+*/
 
 .philosophy-left {
-    right: calc(100% + 50px);
+    right: calc(100% + 25px);
 }
 
-/* Push right boxes outside journal */
-
 .philosophy-right {
-    left: calc(100% + 50px);
+    left: calc(100% + 25px);
 }
 
 
 /* -------------------------
-   INDIVIDUAL BOXES
+   INDIVIDUAL WHITE CARDS
 ------------------------- */
 
 .philosophy-card {
-    box-sizing: border-box;
     width: 100%;
-    border: 1px solid #bbb;
-    border-radius: 12px;
+
+    box-sizing: border-box;
+
+    background: white;
+
+    border: none;
+    border-radius: 14px;
+
     padding: 22px;
 }
 
 .philosophy-card h2 {
     font-size: 20px;
+
     margin-top: 0;
     margin-bottom: 20px;
 }
@@ -92,6 +168,7 @@ main.philosophy-page {
 .philosophy-card-label {
     font-size: 15px;
     color: #555;
+
     margin-bottom: 8px;
 }
 
@@ -106,46 +183,57 @@ main.philosophy-page {
 
 
 /* -------------------------
-   STAGGERED BOX POSITIONS
+   EVEN ZIGZAG POSITIONS
 ------------------------- */
 
-/* Upper left */
+/*
+   Card 1: upper left
+*/
+
 .philosophy-card-1 {
-    margin-top: 20px;
+    margin-top: 40px;
 }
 
-/* Upper right */
+
+/*
+   Card 2: next step down on right
+*/
+
 .philosophy-card-2 {
-    margin-top: 160px;
+    margin-top: 220px;
 }
 
-/* Lower left */
+
+/*
+   Card 3: next step down on left
+*/
+
 .philosophy-card-3 {
-    margin-top: 260px;
+    margin-top: 400px;
 }
 
-/* Lower right */
+
+/*
+   Card 4: next step down on right
+*/
+
 .philosophy-card-4 {
-    margin-top: 300px;
+    margin-top: 580px;
 }
 
 
 /* -------------------------
-   MOBILE / SMALL SCREENS
+   SMALLER SCREENS
 ------------------------- */
 
-@media (max-width: 1200px) {
+@media (max-width: 1250px) {
 
-    main.philosophy-page {
-        max-width: 700px;
+    body:has(.philosophy-page) {
+        max-width: 900px;
     }
 
     .philosophy-side {
         position: static;
-        width: 100%;
-    }
-
-    .philosophy-journal {
         width: 100%;
     }
 
@@ -155,7 +243,42 @@ main.philosophy-page {
     }
 
     .philosophy-card {
-        max-width: 500px;
+        max-width: 100%;
+
         margin-top: 25px;
     }
+
+}
+
+
+/* -------------------------
+   MOBILE
+------------------------- */
+
+@media (max-width: 700px) {
+
+    body:has(.philosophy-page) {
+        width: auto;
+        max-width: calc(100% - 30px);
+
+        margin: 25px auto;
+        padding: 0;
+    }
+
+    body:has(.philosophy-page) > header {
+        width: 100%;
+
+        padding: 25px 25px 0;
+
+        border-radius: 12px 12px 0 0;
+    }
+
+    main.philosophy-page {
+        width: 100%;
+
+        padding: 25px;
+
+        border-radius: 0 0 12px 12px;
+    }
+
 }
