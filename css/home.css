@@ -141,3 +141,13 @@
 .writing-home .writing-link a {
     color: #444;
 }
+/* ABOUT TEXT WIDTH */
+
+.about-section p {
+    max-width: 760px;
+}
+/* HOMEPAGE SECTION TEXT WIDTH */
+
+.home-section p {
+    max-width: 360px;
+}
