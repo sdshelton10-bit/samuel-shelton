@@ -198,3 +198,11 @@ header h1 a:hover {
         gap: 50px;
     }
 }
+a:visited {
+    color: inherit;
+}
+
+.home-section h2 a,
+.home-section h2 a:visited {
+    color: #222;
+}
