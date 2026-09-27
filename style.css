@@ -46,3 +46,40 @@ article p {
     margin-top: 0;
     color: #777;
 }
+.story {
+    max-width: 680px;
+}
+
+.story-header {
+    margin-bottom: 40px;
+}
+
+.story-header h2 {
+    margin-bottom: 5px;
+}
+
+.story p {
+    margin-bottom: 24px;
+}
+
+.post-info {
+    color: #777;
+    font-size: 16px;
+}
+
+.back-link {
+    margin-top: 60px;
+}
+
+header h1 a,
+.story a,
+.writing-preview a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.story a:hover,
+.writing-preview a:hover,
+header h1 a:hover {
+    text-decoration: underline;
+}
