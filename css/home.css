@@ -1,23 +1,30 @@
 /* -------------------------
-   HOMEPAGE BACKGROUND
+   FULL-PAGE BACKGROUND
 ------------------------- */
 
-body {
+html {
+    min-height: 100%;
+
     background-image: url("../images/website%20upload/rocky%20mtn%20drive%20Medium.jpeg");
     background-size: cover;
     background-position: center;
-    background-attachment: fixed;
     background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+body {
+    min-height: 100vh;
+    background: transparent;
 }
 
 
 /* -------------------------
-   MAIN WHITE CONTENT BOX
+   MAIN WHITE TEXT BOX
 ------------------------- */
 
 .home-content {
     position: relative;
-    z-index: 1;
+    z-index: 2;
 
     background: white;
     border-radius: 18px;
@@ -27,7 +34,7 @@ body {
 }
 
 
-/* Tighten header spacing on homepage */
+/* HEADER */
 
 .home-content header {
     margin-bottom: 45px;
@@ -82,10 +89,6 @@ body {
     margin-top: 8px;
 }
 
-.home-section h3 {
-    margin-bottom: 5px;
-}
-
 
 /* -------------------------
    WRITING PREVIEW
@@ -103,8 +106,21 @@ body {
 
 
 /* -------------------------
-   MARGIN PHOTOS
+   FOUR CORNER PHOTOS
 ------------------------- */
+
+/*
+   This layer covers the whole browser.
+   It sits BEHIND the white content box.
+*/
+
+.margin-photos {
+    position: fixed;
+    inset: 0;
+
+    z-index: 1;
+    pointer-events: none;
+}
 
 .margin-photo {
     position: absolute;
@@ -114,46 +130,41 @@ body {
 
     object-fit: cover;
 
-    background: white;
-    border: 10px solid white;
-    border-radius: 14px;
-
-    box-sizing: border-box;
-
-    z-index: 2;
+    /* no white borders */
+    border: none;
+    border-radius: 0;
 }
 
 
-/* LEFT PHOTOS */
+/* TOP LEFT */
 
-.margin-photo.left {
+.photo-1 {
+    top: 90px;
     left: 20px;
 }
 
 
-/* RIGHT PHOTOS */
+/* TOP RIGHT */
 
-.margin-photo.right {
+.photo-2 {
+    top: 90px;
     right: 20px;
 }
 
 
-/* INDIVIDUAL PHOTO POSITIONS */
-
-.photo-1 {
-    top: 200px;
-}
-
-.photo-2 {
-    top: 290px;
-}
+/* BOTTOM LEFT */
 
 .photo-3 {
-    top: 470px;
+    bottom: 30px;
+    left: 20px;
 }
 
+
+/* BOTTOM RIGHT */
+
 .photo-4 {
-    top: 560px;
+    bottom: 30px;
+    right: 20px;
 }
 
 
@@ -163,8 +174,9 @@ body {
 
 @media (max-width: 1500px) {
 
-    .margin-photos {
-        display: none;
+    .margin-photo {
+        width: 220px;
+        height: 220px;
     }
 
 }
@@ -174,11 +186,20 @@ body {
    MOBILE
 ------------------------- */
 
-@media (max-width: 700px) {
+@media (max-width: 1000px) {
 
-    body {
+    .margin-photos {
+        display: none;
+    }
+
+    html {
         background-attachment: scroll;
     }
+
+}
+
+
+@media (max-width: 700px) {
 
     .home-content {
         padding: 25px;
