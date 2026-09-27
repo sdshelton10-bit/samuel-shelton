@@ -26,15 +26,20 @@ body {
     position: relative;
     z-index: 2;
 
+    width: 850px;
+    max-width: calc(100% - 40px);
+
     background: white;
     border-radius: 18px;
 
-    padding: 35px 40px 40px;
+    padding: 35px 45px 40px;
     box-sizing: border-box;
 }
 
 
-/* HEADER */
+/* -------------------------
+   HEADER
+------------------------- */
 
 .home-content header {
     margin-bottom: 45px;
@@ -58,7 +63,7 @@ body {
     display: grid;
     grid-template-columns: 1fr 1fr;
 
-    column-gap: 60px;
+    column-gap: 50px;
     row-gap: 45px;
 
     margin-top: 50px;
@@ -85,7 +90,7 @@ body {
 }
 
 .home-section p {
-    max-width: 360px;
+    max-width: 330px;
     margin-top: 8px;
 }
 
@@ -130,7 +135,6 @@ body {
 
     object-fit: cover;
 
-    /* no white borders */
     border: none;
     border-radius: 0;
 }
@@ -202,8 +206,15 @@ body {
 @media (max-width: 700px) {
 
     .home-content {
+        width: auto;
+        max-width: calc(100% - 30px);
+
         padding: 25px;
         border-radius: 12px;
+    }
+
+    .about-section p {
+        max-width: none;
     }
 
     .home-grid {
