@@ -97,42 +97,41 @@
 
                 <h2>Buddhism Centered Thought</h2>
 
-                <div class="philosophy-preview">
 
-                    I finished up the Noble Eightfold Path portion of the Heart of the Buddha's Teachings. Very insightful stuff, yet very hard to encorporate into everyday life.
+                <details class="philosophy-dropdown">
 
-                    <button
-                        class="read-more-text"
-                        type="button"
-                        onclick="expandEntry(this)">
-                        Read more →
-                    </button>
+                    <summary>
+                        <span class="preview-text">
+                            I finished up the Noble Eightfold Path portion of the Heart of the Buddha's Teachings. Very insightful stuff, yet very hard to encorporate into everyday life.
+                        </span>
 
-                </div>
+                        <span class="read-more">
+                            Read more →
+                        </span>
+                    </summary>
 
 
-                <div class="philosophy-full">
+                    <div class="expanded-text">
 
-                    <p>
-                        Right mindfulness may be the kicker here. If you can practice that one conquering the rest comes much easier. To have a mind that is not all over the place all the time is not an easy thing to do. Another concept that is different from most modern ideologies is the art of detatchment. Imagine wanting to achieve something. Frowned upon word there is wanting. It's nearly impossible, without devoting one's whole life, to live via the eightfold path if you want to achieve something. On the contrary, i could be missing the point.
-                    </p>
+                        <p>
+                            Right mindfulness may be the kicker here. If you can practice that one conquering the rest comes much easier. To have a mind that is not all over the place all the time is not an easy thing to do. Another concept that is different from most modern ideologies is the art of detatchment. Imagine wanting to achieve something. Frowned upon word there is wanting. It's nearly impossible, without devoting one's whole life, to live via the eightfold path if you want to achieve something. On the contrary, i could be missing the point.
+                        </p>
 
-                    <p>
-                        This is why I have been more inclined to round up bits and pieces from a few of these guys. I have deep respect for the morals that Buddhism introduces. But being a young man I'm naturally drawn to the the Nietzschean idea of Nihilism and logotherapy, creating meaning for yourself, committed to creating your own reality and keeping up with one's own future while still being righteous. And doing so however he see fit.
-                    </p>
+                        <p>
+                            This is why I have been more inclined to round up bits and pieces from a few of these guys. I have deep respect for the morals that Buddhism introduces. But being a young man I'm naturally drawn to the the Nietzschean idea of Nihilism and logotherapy, creating meaning for yourself, committed to creating your own reality and keeping up with one's own future while still being righteous. And doing so however he see fit.
+                        </p>
 
-                    <p>
-                        I think it would be ignorant to say that Buddhism is outdated because it is not. It is not a viable way to live for most people, including myself. I can only strive to align with the noble eightfold path beacuse I do believe that true happiness can emerge from that path. But it will take a lifetime or two to get there. Rereading this I can see it is all over the place, but that's the beauty of progress.
-                    </p>
+                        <p>
+                            I think it would be ignorant to say that Buddhism is outdated because it is not. It is not a viable way to live for most people, including myself. I can only strive to align with the noble eightfold path beacuse I do believe that true happiness can emerge from that path. But it will take a lifetime or two to get there. Rereading this I can see it is all over the place, but that's the beauty of progress.
+                        </p>
 
-                    <button
-                        class="show-less-text"
-                        type="button"
-                        onclick="collapseEntry(this)">
-                        Show less ↑
-                    </button>
+                        <div class="show-less">
+                            Show less ↑
+                        </div>
 
-                </div>
+                    </div>
+
+                </details>
 
             </article>
 
@@ -233,38 +232,21 @@
     </main>
 
 
-    <!-- =========================
-         READ MORE SCRIPT
-    ========================== -->
+    <!-- Makes "Show less" close the dropdown -->
 
     <script>
 
-        function expandEntry(button) {
+        document.querySelectorAll(".show-less").forEach(function(button) {
 
-            const entry = button.closest(".philosophy-entry");
+            button.addEventListener("click", function() {
 
-            const fullText = entry.querySelector(".philosophy-full");
+                const dropdown = button.closest(".philosophy-dropdown");
 
-            fullText.classList.add("open");
+                dropdown.removeAttribute("open");
 
-            button.style.display = "none";
+            });
 
-        }
-
-
-        function collapseEntry(button) {
-
-            const entry = button.closest(".philosophy-entry");
-
-            const fullText = entry.querySelector(".philosophy-full");
-
-            const readMore = entry.querySelector(".read-more-text");
-
-            fullText.classList.remove("open");
-
-            readMore.style.display = "inline";
-
-        }
+        });
 
     </script>
 
