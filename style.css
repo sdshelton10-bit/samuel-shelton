@@ -1,22 +1,45 @@
 /* -------------------------
-   GLOBAL SITE STYLES
+   SITE-WIDE BACKGROUND
+------------------------- */
+
+html {
+    min-height: 100%;
+
+    background-image: url("images/website%20upload/rocky%20mtn%20drive%20Medium.jpeg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+
+/* -------------------------
+   GLOBAL WHITE CONTENT BOX
 ------------------------- */
 
 body {
-    max-width: 1200px;
+    width: 900px;
+    max-width: calc(100% - 80px);
+
     margin: 60px auto;
-    padding: 0 20px;
+    padding: 35px 45px 45px;
+
+    box-sizing: border-box;
 
     font-family: Georgia, serif;
     font-size: 18px;
     line-height: 1.6;
 
     color: #222;
-    background: #fff;
+
+    background: white;
+    border-radius: 18px;
 }
 
 
-/* HEADER */
+/* -------------------------
+   HEADER
+------------------------- */
 
 header {
     margin-bottom: 60px;
@@ -38,7 +61,9 @@ header h1 a:hover {
 }
 
 
-/* NAVIGATION */
+/* -------------------------
+   NAVIGATION
+------------------------- */
 
 nav a,
 nav a:visited {
@@ -52,7 +77,9 @@ nav a:hover {
 }
 
 
-/* BASIC TYPOGRAPHY */
+/* -------------------------
+   BASIC TYPOGRAPHY
+------------------------- */
 
 h1 {
     font-size: 32px;
@@ -75,7 +102,9 @@ article p {
 }
 
 
-/* LINKS */
+/* -------------------------
+   LINKS
+------------------------- */
 
 a,
 a:visited {
@@ -85,21 +114,51 @@ a:visited {
 a:hover {
     text-decoration: underline;
 }
+
+
 /* -------------------------
-   SITE-WIDE BACKGROUND
+   HOMEPAGE OVERRIDE
 ------------------------- */
 
-html {
-    min-height: 100%;
+/*
+   The homepage already has its own .home-content
+   white box, so the body itself stays transparent there.
+*/
 
-    background-image: url("images/website%20upload/rocky%20mtn%20drive%20Medium.jpeg");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
+body:has(.home-content) {
+    width: auto;
+    max-width: 1200px;
+
+    padding: 0 20px;
+
+    background: transparent;
+    border-radius: 0;
 }
 
-body {
-    min-height: 100vh;
-    background: transparent;
+
+/* -------------------------
+   MOBILE
+------------------------- */
+
+@media (max-width: 700px) {
+
+    html {
+        background-attachment: scroll;
+    }
+
+    body {
+        width: auto;
+        max-width: calc(100% - 30px);
+
+        margin: 25px auto;
+        padding: 25px;
+
+        border-radius: 12px;
+    }
+
+    body:has(.home-content) {
+        max-width: 100%;
+        padding: 0 15px;
+    }
+
 }
