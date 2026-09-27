@@ -71,7 +71,6 @@
         </aside>
 
 
-
         <!-- =========================
              CENTER JOURNAL
         ========================== -->
@@ -97,44 +96,45 @@
 
                 <h2>Buddhism Centered Thought</h2>
 
+                <!-- PREVIEW -->
 
-                <details class="philosophy-dropdown">
-
-                    <summary>
-                        <span class="preview-text">
-                            I finished up the Noble Eightfold Path portion of the Heart of the Buddha's Teachings. Very insightful stuff, yet very hard to encorporate into everyday life.
-                        </span>
-
-                        <span class="read-more">
-                            Read more →
-                        </span>
-                    </summary>
+                <p class="philosophy-preview">
+                    I finished up the Noble Eightfold Path portion of the Heart of the Buddha's Teachings. Very insightful stuff, yet very hard to encorporate into everyday life.
+                    <button
+                        class="read-more-button"
+                        type="button"
+                        onclick="expandPhilosophy(this)">
+                        Read more →
+                    </button>
+                </p>
 
 
-                    <div class="expanded-text">
+                <!-- HIDDEN FULL TEXT -->
 
-                        <p>
-                            Right mindfulness may be the kicker here. If you can practice that one conquering the rest comes much easier. To have a mind that is not all over the place all the time is not an easy thing to do. Another concept that is different from most modern ideologies is the art of detatchment. Imagine wanting to achieve something. Frowned upon word there is wanting. It's nearly impossible, without devoting one's whole life, to live via the eightfold path if you want to achieve something. On the contrary, i could be missing the point.
-                        </p>
+                <div class="philosophy-expanded">
 
-                        <p>
-                            This is why I have been more inclined to round up bits and pieces from a few of these guys. I have deep respect for the morals that Buddhism introduces. But being a young man I'm naturally drawn to the the Nietzschean idea of Nihilism and logotherapy, creating meaning for yourself, committed to creating your own reality and keeping up with one's own future while still being righteous. And doing so however he see fit.
-                        </p>
+                    <p>
+                        Right mindfulness may be the kicker here. If you can practice that one conquering the rest comes much easier. To have a mind that is not all over the place all the time is not an easy thing to do. Another concept that is different from most modern ideologies is the art of detatchment. Imagine wanting to achieve something. Frowned upon word there is wanting. It's nearly impossible, without devoting one's whole life, to live via the eightfold path if you want to achieve something. On the contrary, i could be missing the point.
+                    </p>
 
-                        <p>
-                            I think it would be ignorant to say that Buddhism is outdated because it is not. It is not a viable way to live for most people, including myself. I can only strive to align with the noble eightfold path beacuse I do believe that true happiness can emerge from that path. But it will take a lifetime or two to get there. Rereading this I can see it is all over the place, but that's the beauty of progress.
-                        </p>
+                    <p>
+                        This is why I have been more inclined to round up bits and pieces from a few of these guys. I have deep respect for the morals that Buddhism introduces. But being a young man I'm naturally drawn to the the Nietzschean idea of Nihilism and logotherapy, creating meaning for yourself, committed to creating your own reality and keeping up with one's own future while still being righteous. And doing so however he see fit.
+                    </p>
 
-                        <div class="show-less">
-                            Show less ↑
-                        </div>
+                    <p>
+                        I think it would be ignorant to say that Buddhism is outdated because it is not. It is not a viable way to live for most people, including myself. I can only strive to align with the noble eightfold path beacuse I do believe that true happiness can emerge from that path. But it will take a lifetime or two to get there. Rereading this I can see it is all over the place, but that's the beauty of progress.
+                    </p>
 
-                    </div>
+                    <button
+                        class="show-less-button"
+                        type="button"
+                        onclick="collapsePhilosophy(this)">
+                        Show less ↑
+                    </button>
 
-                </details>
+                </div>
 
             </article>
-
 
 
             <!-- =========================
@@ -153,7 +153,6 @@
             </article>
 
 
-
             <!-- =========================
                  JOURNAL ENTRY #3
             ========================== -->
@@ -168,7 +167,6 @@
                 </p>
 
             </article>
-
 
 
             <!-- =========================
@@ -187,7 +185,6 @@
             </article>
 
         </section>
-
 
 
         <!-- =========================
@@ -232,21 +229,38 @@
     </main>
 
 
-    <!-- Makes "Show less" close the dropdown -->
+    <!-- =========================
+         READ MORE SCRIPT
+    ========================== -->
 
     <script>
 
-        document.querySelectorAll(".show-less").forEach(function(button) {
+        function expandPhilosophy(button) {
 
-            button.addEventListener("click", function() {
+            const entry = button.closest(".philosophy-entry");
 
-                const dropdown = button.closest(".philosophy-dropdown");
+            const expandedText = entry.querySelector(".philosophy-expanded");
 
-                dropdown.removeAttribute("open");
+            expandedText.style.display = "block";
 
-            });
+            button.style.display = "none";
 
-        });
+        }
+
+
+        function collapsePhilosophy(button) {
+
+            const entry = button.closest(".philosophy-entry");
+
+            const expandedText = entry.querySelector(".philosophy-expanded");
+
+            const readMoreButton = entry.querySelector(".read-more-button");
+
+            expandedText.style.display = "none";
+
+            readMoreButton.style.display = "inline";
+
+        }
 
     </script>
 
