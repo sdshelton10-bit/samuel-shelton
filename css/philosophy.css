@@ -1,1 +1,134 @@
-/* Philosophy page styles */
+/* -------------------------
+   PHILOSOPHY PAGE
+------------------------- */
+
+main.philosophy-page {
+    display: grid;
+    grid-template-columns: 250px minmax(0, 600px) 250px;
+    gap: 50px;
+    align-items: start;
+}
+
+
+/* CENTER JOURNAL */
+
+.philosophy-journal {
+    width: 100%;
+}
+
+.philosophy-journal > h1 {
+    font-size: 30px;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.philosophy-intro {
+    color: #555;
+    margin-top: 0;
+    margin-bottom: 55px;
+}
+
+.philosophy-entry {
+    margin-bottom: 65px;
+}
+
+.philosophy-entry h2 {
+    font-size: 21px;
+    margin-top: 3px;
+    margin-bottom: 18px;
+}
+
+.philosophy-date {
+    color: #888;
+    font-size: 15px;
+    margin-bottom: 0;
+}
+
+.philosophy-entry p {
+    margin-top: 10px;
+}
+
+
+/* LEFT AND RIGHT SIDES */
+
+.philosophy-side {
+    width: 100%;
+}
+
+
+/* INDIVIDUAL BOXES */
+
+.philosophy-card {
+    box-sizing: border-box;
+    width: 100%;
+    border: 1px solid #bbb;
+    border-radius: 12px;
+    padding: 22px;
+}
+
+.philosophy-card h2 {
+    font-size: 20px;
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+.philosophy-card-label {
+    font-size: 15px;
+    color: #555;
+    margin-bottom: 8px;
+}
+
+.philosophy-card ul {
+    margin-top: 8px;
+    padding-left: 22px;
+}
+
+.philosophy-card li {
+    margin-bottom: 6px;
+}
+
+
+/* STAGGERED POSITIONS */
+
+.philosophy-card-1 {
+    margin-top: 20px;
+}
+
+.philosophy-card-2 {
+    margin-top: 160px;
+}
+
+.philosophy-card-3 {
+    margin-top: 260px;
+}
+
+.philosophy-card-4 {
+    margin-top: 300px;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 1000px) {
+    main.philosophy-page {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .philosophy-journal {
+        order: 1;
+    }
+
+    .philosophy-left {
+        order: 2;
+    }
+
+    .philosophy-right {
+        order: 3;
+    }
+
+    .philosophy-card {
+        margin-top: 25px;
+        max-width: 500px;
+    }
+}
