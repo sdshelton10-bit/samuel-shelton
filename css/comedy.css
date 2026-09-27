@@ -2,15 +2,77 @@
    COMEDY PAGE
 ------------------------- */
 
-main.comedy-page {
-    display: grid;
-    grid-template-columns: minmax(0, 750px) 280px;
-    gap: 100px;
-    align-items: start;
+/*
+   Comedy uses a narrow main white box
+   with the sidebar outside of it.
+*/
+
+body:has(.comedy-page) {
+    width: auto;
+    max-width: 1200px;
+
+    background: transparent;
+    border-radius: 0;
+
+    padding: 0 20px;
 }
 
 
-/* BLOG */
+/* -------------------------
+   HEADER
+------------------------- */
+
+/*
+   Header/navigation joins the main comedy
+   content as one continuous white box.
+*/
+
+body:has(.comedy-page) > header {
+    width: 700px;
+    max-width: 100%;
+
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 0;
+
+    padding: 35px 45px 0;
+
+    box-sizing: border-box;
+
+    background: white;
+
+    border-radius: 18px 18px 0 0;
+}
+
+
+/* -------------------------
+   MAIN COMEDY BOX
+------------------------- */
+
+main.comedy-page {
+    position: relative;
+
+    display: block;
+
+    width: 700px;
+    max-width: 100%;
+
+    margin-left: auto;
+    margin-right: auto;
+
+    padding: 30px 45px 45px;
+
+    box-sizing: border-box;
+
+    background: white;
+
+    border-radius: 0 0 18px 18px;
+}
+
+
+/* -------------------------
+   COMEDY BLOG
+------------------------- */
 
 .comedy-blog {
     width: 100%;
@@ -20,6 +82,7 @@ main.comedy-page {
     font-size: 16px;
     font-weight: normal;
     color: #555;
+
     margin-top: 0;
     margin-bottom: 30px;
 }
@@ -30,12 +93,15 @@ main.comedy-page {
 
 .comedy-entry h2 {
     font-size: 22px;
+
+    margin-top: 0;
     margin-bottom: 5px;
 }
 
 .comedy-date {
     color: #888;
     font-size: 15px;
+
     margin-top: 0;
     margin-bottom: 20px;
 }
@@ -45,15 +111,36 @@ main.comedy-page {
 }
 
 
-/* SIDEBAR */
+/* -------------------------
+   EXTERNAL COMEDY SIDEBAR
+------------------------- */
 
 .comedy-sidebar {
-    width: 100%;
+    position: absolute;
+
+    width: 235px;
+
+    /*
+       Same 25px gap used on Philosophy.
+    */
+
+    left: calc(100% + 25px);
+    top: 40px;
+
     box-sizing: border-box;
-    border: 1px solid #bbb;
-    border-radius: 12px;
-    padding: 25px;
+
+    background: white;
+
+    border: none;
+    border-radius: 14px;
+
+    padding: 22px;
 }
+
+
+/* -------------------------
+   SIDEBAR CONTENT
+------------------------- */
 
 .sidebar-section {
     margin-bottom: 30px;
@@ -65,9 +152,12 @@ main.comedy-page {
 
 .sidebar-section h3 {
     font-size: 14px;
+
     text-transform: uppercase;
     letter-spacing: 1px;
+
     color: #777;
+
     margin-top: 0;
     margin-bottom: 8px;
 }
@@ -82,11 +172,61 @@ main.comedy-page {
 }
 
 
-/* MOBILE */
+/* -------------------------
+   SMALLER SCREENS
+------------------------- */
 
-@media (max-width: 800px) {
-    main.comedy-page {
-        grid-template-columns: 1fr;
-        gap: 40px;
+@media (max-width: 1050px) {
+
+    body:has(.comedy-page) {
+        max-width: 750px;
     }
+
+    .comedy-sidebar {
+        position: static;
+
+        width: 100%;
+        max-width: 100%;
+
+        margin-top: 30px;
+    }
+
+}
+
+
+/* -------------------------
+   MOBILE
+------------------------- */
+
+@media (max-width: 700px) {
+
+    body:has(.comedy-page) {
+        width: auto;
+        max-width: calc(100% - 30px);
+
+        margin: 25px auto;
+        padding: 0;
+    }
+
+    body:has(.comedy-page) > header {
+        width: 100%;
+
+        padding: 25px 25px 0;
+
+        border-radius: 12px 12px 0 0;
+    }
+
+    main.comedy-page {
+        width: 100%;
+
+        padding: 25px;
+
+        border-radius: 0 0 12px 12px;
+    }
+
+    .comedy-sidebar {
+        margin-top: 30px;
+        border-radius: 12px;
+    }
+
 }
