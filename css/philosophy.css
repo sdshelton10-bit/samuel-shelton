@@ -365,3 +365,19 @@ main.philosophy-page {
     color: #4d91d1 !important;
     text-decoration: underline;
 }
+/* -------------------------
+   MY TOP 4 BOX
+------------------------- */
+
+.philosophy-top-four {
+    display: inline-block;
+
+    background: white;
+
+    padding: 8px 14px;
+    margin-bottom: 10px;
+
+    border-radius: 10px;
+
+    font-weight: bold;
+}
