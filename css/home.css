@@ -80,6 +80,9 @@ body {
 .home-section h2 {
     margin-top: 0;
     margin-bottom: 12px;
+
+    max-width: 330px;
+    text-align: center;
 }
 
 .home-section h2 a,
