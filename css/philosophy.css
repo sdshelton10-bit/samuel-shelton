@@ -282,3 +282,48 @@ main.philosophy-page {
     }
 
 }
+/* -------------------------
+   READ MORE / EXPAND
+------------------------- */
+
+.philosophy-more {
+    margin-top: 10px;
+}
+
+.philosophy-more summary {
+    display: inline-block;
+
+    color: #444;
+    text-decoration: underline;
+
+    cursor: pointer;
+    list-style: none;
+}
+
+.philosophy-more summary::-webkit-details-marker {
+    display: none;
+}
+
+.philosophy-more summary::marker {
+    display: none;
+}
+
+.philosophy-full {
+    margin-top: 20px;
+}
+
+.philosophy-full p {
+    margin-bottom: 24px;
+}
+
+
+/* Change button after opening */
+
+.philosophy-more[open] summary {
+    font-size: 0;
+}
+
+.philosophy-more[open] summary::after {
+    content: "Show less ↑";
+    font-size: 18px;
+}
