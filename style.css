@@ -206,3 +206,100 @@ a:visited {
 .home-section h2 a:visited {
     color: #222;
 }
+/* -------------------------
+   COMEDY PAGE
+------------------------- */
+
+.comedy-page {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 280px;
+    gap: 80px;
+    align-items: start;
+}
+
+
+/* BLOG */
+
+.comedy-blog {
+    max-width: 700px;
+}
+
+.page-label {
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #777;
+    margin-top: 0;
+    margin-bottom: 45px;
+}
+
+.comedy-entry {
+    margin-bottom: 65px;
+}
+
+.comedy-entry h2 {
+    font-size: 22px;
+    margin-bottom: 2px;
+}
+
+.comedy-date {
+    color: #888;
+    font-size: 15px;
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+.comedy-entry p {
+    margin-bottom: 20px;
+}
+
+
+/* SIDEBAR */
+
+.comedy-sidebar {
+    border: 1px solid #ccc;
+    border-radius: 12px;
+    padding: 25px;
+}
+
+.sidebar-section {
+    margin-bottom: 32px;
+}
+
+.sidebar-section:last-child {
+    margin-bottom: 0;
+}
+
+.sidebar-section h3 {
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 7px;
+    color: #777;
+}
+
+.sidebar-section p {
+    margin: 4px 0;
+}
+
+.sidebar-section a,
+.sidebar-section a:visited {
+    color: #444;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 800px) {
+
+    .comedy-page {
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+
+    .comedy-sidebar {
+        max-width: 100%;
+    }
+
+}
