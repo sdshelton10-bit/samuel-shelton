@@ -283,95 +283,85 @@ main.philosophy-page {
 
 }
 /* -------------------------
-   PHILOSOPHY DROPDOWN
+   PHILOSOPHY READ MORE
 ------------------------- */
-
-.philosophy-dropdown {
-    margin: 0;
-    padding: 0;
-}
 
 
 /* Preview */
 
-.philosophy-dropdown summary {
-    display: block;
+.philosophy-preview {
+    margin-bottom: 0;
+}
 
-    margin: 0;
+
+/* Read More button */
+
+.read-more-button {
+    display: inline;
+
+    margin: 0 0 0 3px;
     padding: 0;
 
-    color: #222;
+    border: 0;
+    background: transparent;
+
+    font-family: Georgia, serif;
+    font-size: inherit;
+    line-height: inherit;
+
+    color: #72aee6 !important;
 
     cursor: pointer;
-
-    list-style: none;
 }
 
-.philosophy-dropdown summary::-webkit-details-marker {
-    display: none;
-}
-
-.philosophy-dropdown summary::marker {
-    display: none;
-}
-
-
-/* Preview text */
-
-.preview-text {
-    color: #222;
-}
-
-
-/* Read more */
-
-.read-more {
-    color: #73a9d8;
-
-    margin-left: 3px;
-
-    white-space: nowrap;
-}
-
-.read-more:hover {
-    color: #4f8fc9;
-
+.read-more-button:hover {
+    color: #4d91d1 !important;
     text-decoration: underline;
 }
 
 
-/* Hide Read More when entry is open */
+/* Full text is hidden when page loads */
 
-.philosophy-dropdown[open] .read-more {
-    display: none;
-}
+.philosophy-expanded {
+    display: none !important;
 
-
-/* Expanded writing */
-
-.expanded-text {
     margin-top: 20px;
 }
 
-.expanded-text p {
+
+/* JavaScript overrides hidden state when opened */
+
+.philosophy-expanded[style*="display: block"] {
+    display: block !important;
+}
+
+
+.philosophy-expanded p {
     margin-bottom: 24px;
 }
 
 
-/* Show Less */
+/* Show Less button */
 
-.show-less {
-    display: inline-block;
+.show-less-button {
+    display: inline;
 
-    margin-top: 5px;
+    margin: 0;
+    padding: 0;
 
-    color: #73a9d8;
+    border: 0;
+    background: transparent;
+
+    font-family: Georgia, serif;
+    font-size: inherit;
+    line-height: inherit;
+
+    color: #72aee6 !important;
 
     cursor: pointer;
 }
 
-.show-less:hover {
-    color: #4f8fc9;
-
+.show-less-button:hover {
+    color: #4d91d1 !important;
     text-decoration: underline;
 }
